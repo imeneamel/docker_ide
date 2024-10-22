@@ -1,0 +1,15 @@
+
+services:
+  frontend:
+    build:
+      context: ./frontend  # Chemin vers le répertoire du frontend
+    ports:
+      - "3000:3000"  # Port exposé
+    depends_on:
+      - backend
+
+  backend:
+    build:
+      context: ./backend  # Chemin vers le répertoire du backend
+    ports:
+      - "4000:4000"  # Port exposé

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exécution de code en temps réel</title>
+    <script src="/socket.io/socket.io.js"></script> <!-- Ajouter le script Socket.io -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            background-color: whitesmoke;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        select {
+            width: 250px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            outline: none;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+
+        select:focus {
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        #editor {
+            width: 100%;
+            height: 200px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            resize: vertical; /* Permet de redimensionner verticalement */
+        }
+
+        button {
+            background-color: #4c9aff;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        button:hover {
+            background-color: #3578e5;
+        }
+
+        h2 {
+            color: #333;
+            margin-top: 20px;
+        }
+
+        #output {
+            white-space: pre;
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 600px) {
+            select, button {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>IDE collaboratif</h1>
+    <select id="languageSelect">
+        <option value="python">Python</option>
+        <option value="cpp">C++</option>
+        <option value="c">C</option>
+        <option value="java">Java</option>
+    </select>
+    <textarea id="editor" placeholder="Écrivez votre code ici"></textarea>
+    <button id="executeBtn">Exécuter</button>
+    <h2>Résultat :</h2>
+    <pre id="output">Le résultat s'affichera ici...</pre>
+    <script src="scripta.js"></script>
+</body>
+</html>
