@@ -4,15 +4,11 @@ FROM node:lts-alpine
 # Créer un répertoire temporaire
 RUN mkdir -p /app/temp && chown -R node:node /app/temp && chmod -R 777 /app/temp
 
-
-# Copiez votre code backend
 WORKDIR /app
 COPY . .
 
-# Installer les dépendances Node.js
 RUN npm install
 
-# Exposez le port du serveur
 EXPOSE 3000
 
 # Démarrer le serveur

@@ -55,7 +55,6 @@ int main() {
     // Met à jour le code dans l'éditeur
     codeEditor.value = examples[language];
 
-    // Optionnel : définir le langage pour exécution
     socket.emit('execute_code', { language, code: examples[language] });
 
     console.log(`Exemple de code ${language} inséré et prêt à l'exécution.`);
