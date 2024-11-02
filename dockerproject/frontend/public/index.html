@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IDE Collaboratif</title>
+    <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="scripta.js"></script>
+</head>
+<body>
+    <h1>IDE Collaboratif</h1>
+
+    <select id="languageSelector">
+        <option value="python">Python</option>
+        <option value="cpp">C++</option>
+        <option value="java">Java</option>
+    </select>
+    
+    
+    <!-- Zone de Code -->
+    <textarea id="code-editor" placeholder="Écris ton code ici..."></textarea>
+    
+    <!-- Boutons -->
+    <button id="executeButton">Exécuter</button>
+    
+    <!-- Résultats de l'Exécution -->
+    <div id="output"></div>
+
+    
+</body>
+</html>

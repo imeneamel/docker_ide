@@ -1,0 +1,11 @@
+# Dockerfile-java
+FROM openjdk:11-buster
+RUN apt-get update && apt-get install -y python3 python3-venv
+WORKDIR /executor
+COPY executor_java.py /executor/
+
+# Créer et activer un environnement virtuel pour installer Flask
+RUN python3 -m venv /executor/venv && \
+    /executor/venv/bin/pip install flask
+
+CMD ["/executor/venv/bin/python", "executor_java.py"]
