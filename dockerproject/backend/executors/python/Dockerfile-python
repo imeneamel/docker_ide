@@ -1,0 +1,10 @@
+# Dockerfile-python
+FROM python:3.9-alpine
+WORKDIR /executor
+COPY executor.py /executor/
+
+# Créer et activer un environnement virtuel pour installer Flask
+RUN python3 -m venv /executor/venv && \
+    /executor/venv/bin/pip install flask
+
+CMD ["/executor/venv/bin/python", "executor.py"]
